@@ -85,11 +85,11 @@
         android:resource="@color/fcm_notification_color" />
     </config-file>
 
-    <config-file target="AndroidManifest.xml" mode="merge" parent="/manifest">
+    <edit-config target="AndroidManifest.xml" mode="overwrite" parent="/manifest">
       <application 
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round" />
-    </config-file>
+    </edit-config>
 
     <config-file parent="/resources" target="res/values/strings.xml">
       <string name="notification_channel_name">Channel name</string>
