@@ -76,10 +76,21 @@
       <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     </config-file>
 
-    <config-file parent="/manifest/application" target="app/src/main/AndroidManifest.xml">
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/push_icon"/>
+	  <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <service android:name="com.outsystems.firebase.cloudmessaging.OSFirebaseCloudMessagingService" 
+          android:exported="false">
+          <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+          </intent-filter>
+      </service>
+      <meta-data android:name="com.google.firebase.messaging.default_notification_channel_id" 
+        android:value="default"/>
+      <meta-data
+        android:name="com.google.firebase.messaging.default_notification_color"
+        android:resource="@color/fcm_notification_color" />
+      <meta-data
+        android:name="com.google.firebase.messaging.default_notification_icon"
+        android:resource="@drawable/fcm_notification_icon" />
     </config-file>
 
     <config-file parent="/resources" target="res/values/strings.xml">
@@ -91,17 +102,17 @@
     <source-file src="src/android/com/outsystems/firebase/cloudmessaging/OSFirebaseCloudMessaging.kt" target-dir="app/src/main/kotlin/com/outsystems/firebase/cloudmessaging"/>
     <framework src="src/android/com/outsystems/firebase/cloudmessaging/build.gradle" custom="true" type="gradleReference" />
 
-    <resource-file src="src/android/res/drawable-mdpi/push_icon.png"
-      target="res/drawable-mdpi/push_icon.png" />
+    <resource-file src="src/android/res/drawable-hdpi/fcm_notification_icon.png"
+      target="res/drawable-hdpi/fcm_notification_icon.png" />
 
-    <resource-file src="src/android/res/drawable-hdpi/push_icon.png"
-      target="res/drawable-hdpi/push_icon.png" />
+    <resource-file src="src/android/res/drawable-mdpi/fcm_notification_icon.png"
+      target="res/drawable-mdpi/fcm_notification_icon.png" />
 
-    <resource-file src="src/android/res/drawable-xhdpi/push_icon.png"
-      target="res/drawable-xhdpi/push_icon.png" />
+    <resource-file src="src/android/res/drawable-xhdpi/fcm_notification_icon.png"
+      target="res/drawable-xhdpi/fcm_notification_icon.png" />
 
-    <resource-file src="src/android/res/drawable-xxhdpi/push_icon.png"
-      target="res/drawable-xxhdpi/push_icon.png" />
+    <resource-file src="src/android/res/drawable-xxhdpi/fcm_notification_icon.png"
+      target="res/drawable-xxhdpi/fcm_notification_icon.png" />
       
 
   </platform>
