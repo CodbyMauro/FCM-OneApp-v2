@@ -80,6 +80,9 @@
       <meta-data
         android:name="com.google.firebase.messaging.default_notification_icon"
         android:resource="@drawable/fcm_notification_icon" />
+	<meta-data
+        android:name="com.google.firebase.messaging.default_notification_color"
+        android:resource="@color/fcm_notification_color" />
     </config-file>
 
     <config-file parent="/resources" target="res/values/strings.xml">
