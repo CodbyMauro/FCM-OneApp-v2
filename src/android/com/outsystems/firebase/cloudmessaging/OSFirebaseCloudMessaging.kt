@@ -300,9 +300,8 @@ class OSFirebaseCloudMessaging : CordovaImplementation() {
         val text = args.get(2).toString()
         val channelName = args.get(3).toString()
         val channelDescription = args.get(4).toString()
-        val iconResource = args.get(5).toString()
 
-        val result = controller.sendLocalNotification(badge, title, text, iconResource, channelName, channelDescription)
+        val result = controller.sendLocalNotification(badge, title, text, null, channelName, channelDescription)
         if (result.first) {
             sendSuccess(callbackContext)
         } else {
