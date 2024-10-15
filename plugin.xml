@@ -76,11 +76,15 @@
       <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     </config-file>
 
-	<config-file target="AndroidManifest.xml" parent="/manifest/application">
+	  <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <application
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round">
+      </application>
       <meta-data
         android:name="com.google.firebase.messaging.default_notification_icon"
         android:resource="@drawable/fcm_notification_icon" />
-	<meta-data
+	    <meta-data
         android:name="com.google.firebase.messaging.default_notification_color"
         android:resource="@color/fcm_notification_color" />
     </config-file>
@@ -94,7 +98,7 @@
     <source-file src="src/android/com/outsystems/firebase/cloudmessaging/OSFirebaseCloudMessaging.kt" target-dir="app/src/main/kotlin/com/outsystems/firebase/cloudmessaging"/>
     <framework src="src/android/com/outsystems/firebase/cloudmessaging/build.gradle" custom="true" type="gradleReference" />
 
-	<hook type="after_prepare" src="src/scripts/addColor.js" />
+	  <hook type="after_prepare" src="src/scripts/addColor.js" />
 
     <resource-file src="src/android/res/drawable-hdpi/fcm_notification_icon.png"
       target="res/drawable-hdpi/fcm_notification_icon.png" />
@@ -107,10 +111,6 @@
 
     <resource-file src="src/android/res/drawable-xxhdpi/fcm_notification_icon.png"
       target="res/drawable-xxhdpi/fcm_notification_icon.png" />
-
-<resource-file src="src/android/res/drawable-xxxhdpi/fcm_notification_icon.png"
-      target="res/drawable-xxxhdpi/fcm_notification_icon.png" />
-      
 
   </platform>
   
