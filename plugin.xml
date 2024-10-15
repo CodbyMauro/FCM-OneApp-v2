@@ -76,15 +76,7 @@
       <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     </config-file>
 
-	  <config-file target="AndroidManifest.xml" parent="/manifest/application">
-      <service android:name="com.outsystems.firebase.cloudmessaging.OSFirebaseCloudMessagingService" 
-          android:exported="false">
-          <intent-filter>
-            <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-          </intent-filter>
-      </service>
-      <meta-data android:name="com.google.firebase.messaging.default_notification_channel_id" 
-        android:value="default"/>
+	<config-file target="AndroidManifest.xml" parent="/manifest/application">
       <meta-data
         android:name="com.google.firebase.messaging.default_notification_icon"
         android:resource="@drawable/fcm_notification_icon" />
@@ -98,8 +90,6 @@
     <source-file src="src/android/com/outsystems/firebase/cloudmessaging/OSFCMPermissionEvents.kt" target-dir="app/src/main/kotlin/com/outsystems/firebase/cloudmessaging"/>
     <source-file src="src/android/com/outsystems/firebase/cloudmessaging/OSFirebaseCloudMessaging.kt" target-dir="app/src/main/kotlin/com/outsystems/firebase/cloudmessaging"/>
     <framework src="src/android/com/outsystems/firebase/cloudmessaging/build.gradle" custom="true" type="gradleReference" />
-
-	<hook type="after_prepare" src="src/scripts/addColor.js" />
 
     <resource-file src="src/android/res/drawable-hdpi/fcm_notification_icon.png"
       target="res/drawable-hdpi/fcm_notification_icon.png" />
