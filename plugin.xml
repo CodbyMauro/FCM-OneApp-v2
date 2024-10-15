@@ -107,6 +107,9 @@
 
     <resource-file src="src/android/res/drawable-xxhdpi/fcm_notification_icon.png"
       target="res/drawable-xxhdpi/fcm_notification_icon.png" />
+
+<resource-file src="src/android/res/drawable-xxxhdpi/fcm_notification_icon.png"
+      target="res/drawable-xxxhdpi/fcm_notification_icon.png" />
       
 
   </platform>
