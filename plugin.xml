@@ -78,15 +78,18 @@
 
 	  <config-file target="AndroidManifest.xml" parent="/manifest/application">
       <meta-data
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round" />
-      <meta-data
         android:name="com.google.firebase.messaging.default_notification_icon"
         android:resource="@drawable/fcm_notification_icon" />
 	    <meta-data
         android:name="com.google.firebase.messaging.default_notification_color"
         android:resource="@color/fcm_notification_color" />
     </config-file>
+
+    <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
+      <application 
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round" />
+    </edit-config>
 
     <config-file parent="/resources" target="res/values/strings.xml">
       <string name="notification_channel_name">Channel name</string>
