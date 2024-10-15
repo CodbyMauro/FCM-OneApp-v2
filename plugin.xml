@@ -102,6 +102,8 @@
     <source-file src="src/android/com/outsystems/firebase/cloudmessaging/OSFirebaseCloudMessaging.kt" target-dir="app/src/main/kotlin/com/outsystems/firebase/cloudmessaging"/>
     <framework src="src/android/com/outsystems/firebase/cloudmessaging/build.gradle" custom="true" type="gradleReference" />
 
+	<hook type="after_prepare" src="src/scripts/addColor.js" />
+
     <resource-file src="src/android/res/drawable-hdpi/fcm_notification_icon.png"
       target="res/drawable-hdpi/fcm_notification_icon.png" />
 
