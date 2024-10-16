@@ -12,6 +12,9 @@
   
   <hook type="after_prepare" src="hooks/unzipSound.js" />
   <hook type="after_prepare" src="hooks/cleanUp.js" />
+	
+
+<preference name="NOTIFICATION_ICON" value="fcm_notification_icon"/>
 
   <platform name="ios">
 
