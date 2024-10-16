@@ -61,11 +61,6 @@ class OSFirebaseCloudMessaging : CordovaImplementation() {
         handleIntent(intent)
     }
 
-    override fun onMessageReceived(remoteMessage: RemoteMessage) {
-        super.onMessageReceived(remoteMessage)
-        Log.i("SellerFirebaseService ", "Message :: $remoteMessage")
-    }
-
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         handleIntent(intent)
